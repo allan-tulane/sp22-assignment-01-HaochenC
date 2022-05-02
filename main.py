@@ -86,4 +86,13 @@ def test_longest_run_recursive():
     assert longest_run_recursive([12,12,12,6], 12).longest_size == 3
     assert longest_run_recursive([6,12,12,12], 12).longest_size == 3
     assert longest_run_recursive([12,6,6,6], 12).longest_size == 1
+    assert longest_run_recursive([12,6,6,12], 12).longest_size == 1
+    assert longest_run_recursive([12,12,12,12], 12).longest_size == 4
 
+    assert longest_run_recursive([6,12,12], 12).longest_size == 2
+    assert longest_run_recursive([12,12,12], 12).longest_size == 3
+    assert longest_run_recursive([12,12,6], 12).longest_size == 2
+    assert longest_run_recursive([6,6,6], 12).longest_size == 0
+
+def test_longest_run_recursive_hard():
+    assert longest_run_recursive([6, 12, 12, 12, 12, 6, 6, 6], 12).longest_size == 4
